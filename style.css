@@ -85,3 +85,7 @@ footer {
     text-align: center;
     padding: 20px;
 }
+header img {
+    width: 120px;
+    margin-bottom: 15px;
+}
