@@ -89,3 +89,20 @@ header img {
     width: 120px;
     margin-bottom: 15px;
 }
+.tracking {
+    background: white;
+    padding: 35px 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.status-box {
+    background: #f5f7fb;
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 350px;
+    margin: auto;
+    line-height: 2;
+    font-size: 18px;
+}
