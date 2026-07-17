@@ -26,7 +26,23 @@ let lon = position.coords.longitude;
 
 locationText.innerHTML =
 "تم تحديد موقعك بنجاح 📍";
+function changeLanguage(){
 
+let html = document.documentElement;
+
+if(html.lang === "ar"){
+
+html.lang = "en";
+html.dir = "ltr";
+
+}else{
+
+html.lang = "ar";
+html.dir = "rtl";
+
+}
+
+}
 
 console.log(
 "Latitude: " + lat,
