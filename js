@@ -44,7 +44,7 @@ JSON.parse(localStorage.getItem("sanadRequest")) || {};
 
 request.latitude = lat;
 request.longitude = lon;
-
+saveLocation(lat, lon);
 
 localStorage.setItem(
 "sanadRequest",
