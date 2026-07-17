@@ -1,63 +1,38 @@
 function sendWhatsApp() {
 
-let message =
-"طلب صيانة جديد من SANAD MOBILE";
-
-let phone = "962793939312";
-
-let url =
-"https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
-
-window.open(url, "_blank");
-
-}
-function getLocation() {
-
-const locationText = document.getElementById("location");
+let name = document.querySelector('input[placeholder="الاسم"]').value;
+let phone = document.querySelector('input[placeholder="رقم الهاتف"]').value;
+let device = document.querySelector('input[placeholder="نوع الجهاز"]').value;
+let problem = document.querySelector('textarea').value;
 
 
-if (navigator.geolocation) {
+let request = {
+    name: name,
+    phone: phone,
+    device: device,
+    problem: problem,
+    status: "طلب جديد"
+};
 
-navigator.geolocation.getCurrentPosition(function(position){
 
-let lat = position.coords.latitude;
-let lon = position.coords.longitude;
-
-
-locationText.innerHTML =
-"تم تحديد موقعك بنجاح 📍";
-function changeLanguage(){
-
-let html = document.documentElement;
-
-if(html.lang === "ar"){
-
-html.lang = "en";
-html.dir = "ltr";
-
-}else{
-
-html.lang = "ar";
-html.dir = "rtl";
-
-}
-
-}
-
-console.log(
-"Latitude: " + lat,
-"Longitude: " + lon
+localStorage.setItem(
+    "sanadRequest",
+    JSON.stringify(request)
 );
 
 
-});
+let message =
+"طلب صيانة SANAD MOBILE\n\n" +
+"الاسم: " + name +
+"\nالجهاز: " + device +
+"\nالمشكلة: " + problem;
 
 
-} else {
+let url =
+"https://wa.me/962793939312?text=" +
+encodeURIComponent(message);
 
-locationText.innerHTML =
-"المتصفح لا يدعم تحديد الموقع";
 
-}
+window.open(url, "_blank");
 
 }
