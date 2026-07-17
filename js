@@ -36,3 +36,19 @@ encodeURIComponent(message);
 window.open(url, "_blank");
 
 }
+function saveLocation(lat, lon){
+
+let request =
+JSON.parse(localStorage.getItem("sanadRequest")) || {};
+
+
+request.latitude = lat;
+request.longitude = lon;
+
+
+localStorage.setItem(
+"sanadRequest",
+JSON.stringify(request)
+);
+
+}
