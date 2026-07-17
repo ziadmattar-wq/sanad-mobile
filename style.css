@@ -175,3 +175,13 @@ nav ul li {
     border-radius: 20px;
 }
 }
+.logo-img {
+    width: 140px;
+    margin-bottom: 15px;
+}
+
+
+header p {
+    font-size: 20px;
+    line-height: 1.8;
+}
