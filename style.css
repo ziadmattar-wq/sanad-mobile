@@ -106,3 +106,9 @@ header img {
     line-height: 2;
     font-size: 18px;
 }
+.car-image img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
