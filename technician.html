@@ -44,21 +44,56 @@ SANAD MOBILE
 طلب جديد
 </h3>
 
-<p>
+<p id="clientName">
 العميل: -
 </p>
 
-<p>
+<p id="clientDevice">
 الجهاز: -
 </p>
 
-<p>
-الموقع: -
+<p id="clientProblem">
+المشكلة: -
 </p>
 
 
-<button>
+<button onclick="acceptRequest()">
 قبول الطلب
+</button>
+
+
+</div>
+
+
+<script>
+
+let request =
+JSON.parse(localStorage.getItem("sanadRequest"));
+
+
+if(request){
+
+document.getElementById("clientName").innerHTML =
+"العميل: " + request.name;
+
+
+document.getElementById("clientDevice").innerHTML =
+"الجهاز: " + request.device;
+
+
+document.getElementById("clientProblem").innerHTML =
+"المشكلة: " + request.problem;
+
+}
+
+
+function acceptRequest(){
+
+alert("تم قبول الطلب 🚗");
+
+}
+
+</script>
 </button>
 
 
