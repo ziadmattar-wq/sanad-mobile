@@ -1,1 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>تتبع طلب SANAD MOBILE</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+SANAD MOBILE
+</h1>
+
+<p>
+متابعة طلب الصيانة
+</p>
+
+</header>
+
+
+
+<section class="tracking">
+
+
+<h2>
+حالة طلبك
+</h2>
+
+
+<div class="status-box">
+
+<p id="status">
+جاري تحميل الحالة...
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+<script>
+
+let request =
+JSON.parse(localStorage.getItem("sanadRequest"));
+
+
+if(request){
+
+document.getElementById("status").innerHTML =
+"🚗 " + request.status;
+
+}else{
+
+document.getElementById("status").innerHTML =
+"لا يوجد طلب حالي";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>
