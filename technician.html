@@ -93,7 +93,19 @@ let request =
 JSON.parse(localStorage.getItem("sanadRequest"));
 
 
-if(request){
+if(request){if(request.latitude && request.longitude){
+
+document.getElementById("clientLocation").innerHTML =
+"📍 تم تحديد موقع العميل";
+
+
+document.getElementById("mapLink").href =
+"https://www.google.com/maps?q="
++ request.latitude
++ ","
++ request.longitude;
+
+}
 
 document.getElementById("clientName").innerHTML =
 "العميل: " + request.name;
