@@ -130,3 +130,29 @@ SANAD MOBILE
 </body>
 
 </html>
+function changeStatus(){
+
+let status =
+document.getElementById("status").value;
+
+
+let request =
+JSON.parse(localStorage.getItem("sanadRequest"));
+
+
+if(request){
+
+request.status = status;
+
+
+localStorage.setItem(
+"sanadRequest",
+JSON.stringify(request)
+);
+
+
+alert("تم تحديث حالة الطلب");
+
+}
+
+}
